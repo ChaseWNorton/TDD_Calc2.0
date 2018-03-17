@@ -54,6 +54,25 @@ const Calculate = {
       count--;
     }
     return exponential;
+  },
+  max(array) {
+    return array.reduce((total, ele) => {
+      if (ele > total) total = ele;
+      return total
+    })
+  },
+  min(array) {
+    return array.reduce((total, ele) => {
+      if (ele < total) total = ele;
+      return total
+    })
+  },
+  average(array) {
+    let sum = array.reduce((total, ele) => {
+      total += ele;
+      return total;
+    });
+    return sum/array.length
   }
 };
 

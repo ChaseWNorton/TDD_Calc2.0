@@ -158,4 +158,44 @@ describe('Calculate', () => {
       assert.equal(results, expected);
     })
   })
+
+  describe('.max', () => {
+    it('returns the maximum number in an array', () => {
+      const expected = [12,33,49];
+      const inputArray = [[2,12,3,7],[33,12,4,9],[32,10,17,49]];
+
+      const result = inputArray.map(ele => Calculate.max(ele));
+
+      assert.deepEqual(result, expected);
+    });
+
+    it('throws an Error when the array is empty', () => {
+      const exercise = () => {Calculate.max([])}
+      assert.throws(exercise, Error)
+    })
+  })
+  describe('.min', () => {
+    it('returns the minimum number in an array', () => {
+      const expected = [2,4,10];
+      const inputArray = [[2,12,3,7],[33,12,4,9],[32,10,17,49]];
+
+      const result = inputArray.map(ele => Calculate.min(ele));
+
+      assert.deepEqual(result, expected);
+    })
+    it('throws an Error when the array is empty', () => {
+      const exercise = () => {Calculate.min([])}
+      assert.throws(exercise, Error)
+    })
+  })
+  describe('.average', () => {
+    it('return the average value of an array', () => {
+      const expected = [2, 2.5, 6];
+      const inputArray = [[2,2,2,2], [1,2,3,4], [4,8,10,2]];
+
+      const results = inputArray.map(ele => Calculate.average(ele));
+
+      assert.deepEqual(results, expected);
+    })
+  })
 });
